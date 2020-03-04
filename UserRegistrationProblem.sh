@@ -4,8 +4,9 @@ firstName="^[A-Z][a-zA-Z]{2,}$"
 valiedEmail="^[a-zA-Z]{1,}([.]?[a-zA-Z]{1,})?[@]{1}[a-zA-Z]{1,}[.]{1}[a-z]{2}([.]?[a-z]{2})?$"
 moPattern="^[0-9]{2}[ ]{1}[0-9]{10}"
 passWordLength={8,}
-passwordPattern="([A-Z][a-z]*)|([A-Z][0-9]*)|([A-Z][a-z0-9]*)$"
+#passwordPattern="([A-Z][a-z]*)|([A-Z][0-9]*)|([A-Z][a-z0-9]*)$"
 
+passwordPattern="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*)+$"
 #read -p "Enter a First name " firstname
 #read -p "Enter a Second name " lastname
 #read -p "Enter a email " email
@@ -14,7 +15,7 @@ read -p "Enter a Password " password
 
 function checkPassWord()
 { 
-   if [[ ${#password} -gt 8 && $password =~ $passwordPattern ]]
+   if [[ ${#password} -gt 7 && $password =~ $passwordPattern ]]
    then
       printf "Valied\n"
    else
